@@ -1,0 +1,15 @@
+name: Trigger Demo Workflow
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  print-event:
+    runs-on: ubuntu-latest
+    steps:
+      - name: show event name
+        run: echo "Triggered by ${{github.event_name}}"

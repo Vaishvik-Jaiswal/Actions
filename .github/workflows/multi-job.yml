@@ -1,0 +1,20 @@
+name: Multi Job Demo
+
+on: workflow_dispatch
+
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step A
+        run: echo "This is the first job, step A"
+      - name: Step B
+        run: echo "Still in first job, step B"
+
+  second-job:
+    runs-on: windows-latest
+    steps:
+      - name: Step X
+        run: echo "This is the second job, step X"
+      - name: Step Y
+        run: echo "Still in second job, step Y"
